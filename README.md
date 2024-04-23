@@ -1,10 +1,12 @@
 # spm-project-template
 
+ref: https://speakerdeck.com/d_date/swift-package-centered-project-build-and-practice
+
 `swift package init --name Feature`
 
 XCodeを開きプロジェクトルート下にworkspaceを作成
 - `File -> New -> Workspace`
-- 名前は`project.xcworkspace`とかでOK
+- 名前は`App.xcworkspace`とかでOK
 
 プロジェクトルートをworkspaceに追加
 - `File -> Add Files to "project"`
@@ -19,11 +21,11 @@ XCodeを開きプロジェクトルート下にworkspaceを作成
 - `App/App` → `App/iOS`
 - `App/App/AppApp.swift` → `App/iOS/iOS.swift` (ついでに中身も変更)
 - xcodeprojのDevelopment Assets (ビルドしてエラーが出てからで良い):
-	- `App/Preview Contents` → `iOS/Preview Contents`
+    - `App/Preview Contents` → `iOS/Preview Contents`
 
 Finderを開き`App/App.xcodeproj`をXCode上のworkspaceにドラッグ&ドロップ
 
-`App.xcodeproj`と`project`パッケージで`App/`が二重に参照されているので`App/Package.swift`を作成して見えないようにする(HACK)
+`App.xcodeproj`とSwift Packageで`App/`が二重に参照されているので`App/Package.swift`を作成して見えないようにする(HACK)
 - xcodeprojに認識させると`No such module 'PackageDescription'`が出るので参照は消してXCodeからは見えないようにする
 
 ```swift
